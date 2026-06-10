@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tim's Dashboard</title>
+<style>
+:root {
+  --navy:#1a3a5c; --teal:#0e8a8a; --gold:#e8a020; --green:#16a34a;
+  --red:#dc2626; --light:#f0f6ff; --white:#fff; --gray:#6b7280;
+  --border:#e5e7eb; --new-bg:#fffbe6; --card-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--light);color:#1f2937;min-height:100vh}
+.topbar{background:var(--navy);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.topbar h1{font-size:1.2rem;font-weight:700}
+.topbar .ts{font-size:.75rem;opacity:.65}
+.tabs{display:flex;background:var(--navy);border-top:1px solid rgba(255,255,255,.12);overflow-x:auto}
+.tab{padding:10px 20px;color:rgba(255,255,255,.65);font-size:.85rem;font-weight:600;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s}
+.tab:hover{color:#fff}
+.tab.active{color:#fff;border-bottom-color:var(--gold)}
+.tab .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-left:6px;background:transparent}
+.tab .dot.has-new{background:#22c55e}
+.panel{display:none;padding:16px}
+.panel.active{display:block}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.stat{background:#fff;border-radius:8px;border:1px solid var(--border);padding:8px 16px;font-size:.8rem;color:var(--gray);min-width:90px}
+.stat strong{display:block;font-size:1.15rem;color:var(--navy);font-weight:700}
+</style>
+<style>
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.controls input,.controls select{border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:.83rem;background:#fff;color:#1f2937;outline:none}
+.controls input{flex:1;min-width:150px}
+.fbtn{padding:6px 12px;border-radius:6px;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:.78rem;color:#374151;font-weight:500}
+.fbtn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:#fff;border-radius:10px;border:1px solid var(--border);overflow:hidden;transition:box-shadow .15s}
+.card:hover{box-shadow:var(--card-shadow)}
+.card.is-new{border-color:#22c55e;background:var(--new-bg)}
+.card.priority{border-color:var(--teal)}
+.card.is-new.priority{border-color:var(--gold)}
+.ch{padding:10px 14px 4px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.ct{font-weight:700;font-size:.93rem;color:var(--navy);line-height:1.3}
+.cp{font-weight:800;font-size:1rem;color:var(--green);white-space:nowrap}
+.cbadges{padding:2px 14px 6px;display:flex;gap:5px;flex-wrap:wrap}
+.tag{display:inline-block;border-radius:4px;padding:2px 7px;font-size:.68rem;font-weight:600}
+.tag.new{background:#dcfce7;color:var(--green)}
+.tag.pri{background:#ccfbf1;color:#0f766e}
+.tag.src{background:#f3f4f6;color:var(--gray)}
+.tag.reg{background:#ede9fe;color:#6d28d9}
+.cb{padding:4px 14px 10px;font-size:.8rem;color:#374151}
+.cb .loc{color:var(--gray);margin-bottom:3px}
+.cb .notes{font-style:italic;color:#9ca3af;margin-top:4px;padding-top:4px;border-top:1px solid #f3f4f6;font-size:.75rem}
+.cf{padding:7px 14px;border-top:1px solid #f3f4f6;display:flex;justify-content:space-between;align-items:center}
+.cf .date{font-size:.7rem;color:var(--gray)}
+.cf a{font-size:.78rem;background:var(--navy);color:#fff;padding:4px 10px;border-radius:5px;text-decoration:none}
+.cf a:hover{background:var(--teal)}
+</style>
+<style>
+.brief-section{background:#fff;border-radius:10px;border:1px solid var(--border);margin-bottom:14px;overflow:hidden}
+.brief-header{background:var(--navy);color:#fff;padding:10px 16px;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px}
+.brief-body{padding:14px 16px}
+.brief-item{padding:7px 0;border-bottom:1px solid #f3f4f6;font-size:.85rem;display:flex;gap:10px;align-items:flex-start}
+.brief-item:last-child{border-bottom:none}
+.brief-item .time{color:var(--teal);font-weight:700;white-space:nowrap;min-width:70px;font-size:.8rem}
+.brief-item .label{font-weight:600;color:var(--navy)}
+.brief-item .sub{color:var(--gray);font-size:.78rem;margin-top:2px}
+.action-item{padding:7px 0;border-bottom:1px solid #f3f4f6;font-size:.84rem;display:flex;gap:8px;align-items:center}
+.action-item:last-child{border-bottom:none}
+.action-item .bullet{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:2px}
+.flight-card{background:#fff;border-radius:10px;border:1px solid var(--border);padding:16px;margin-bottom:12px}
+.flight-card.deal{border-color:#22c55e;background:#f0fdf4}
+.flight-card .fc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.flight-card .fc-title{font-weight:700;color:var(--navy);font-size:.95rem}
+.flight-card .fc-price{font-size:1.3rem;font-weight:800;color:var(--green)}
+.flight-leg{display:flex;gap:10px;align-items:center;padding:6px 0;font-size:.83rem;border-bottom:1px solid #f3f4f6}
+.flight-leg:last-child{border-bottom:none}
+.flight-leg .airline{font-weight:600;min-width:100px}
+.flight-leg .route{color:var(--gray)}
+.no-deal{text-align:center;padding:40px 20px;color:var(--gray)}
+.no-deal .icon{font-size:2.5rem;margin-bottom:10px}
+.empty{grid-column:1/-1;text-align:center;padding:48px 20px;color:var(--gray)}
+.empty .icon{font-size:2.5rem;margin-bottom:10px}
+.rbar{font-size:.78rem;color:var(--gray);margin-bottom:10px;padding:6px 0}
+footer{text-align:center;padding:20px;font-size:.72rem;color:var(--gray);border-top:1px solid var(--border);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>📊 Tim's Daily Dashboard</h1>
+  <span class="ts" id="page-ts">Loading...</span>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('morning')" id="tab-morning">☀️ Morning Brief <span class="dot" id="dot-morning"></span></div>
+  <div class="tab" onclick="switchTab('business')" id="tab-business">💼 Business Listings <span class="dot" id="dot-business"></span></div>
+  <div class="tab" onclick="switchTab('flights')" id="tab-flights">✈️ Flight Watch <span class="dot" id="dot-flights"></span></div>
+  <div class="tab" onclick="switchTab('catamaran')" id="tab-catamaran">⛵ Catamaran Watch <span class="dot" id="dot-catamaran"></span></div>
+</div>
+<div class="panel active" id="panel-morning">
+  <div class="stats">
+    <div class="stat"><strong id="mb-events">—</strong>Events Today</div>
+    <div class="stat"><strong id="mb-emails">—</strong>Unread Emails</div>
+    <div class="stat"><strong id="mb-actions">—</strong>Action Items</div>
+    <div class="stat"><strong id="mb-updated">—</strong>Last Updated</div>
+  </div>
+  <div class="brief-section">
+    <div class="brief-header">📅 Today's Schedule</div>
+    <div class="brief-body" id="mb-schedule-body"><p style="color:var(--gray);font-size:.85rem">No data yet.</p></div>
+  </div>
+  <div class="brief-section">
+    <div class="brief-header">📬 Emails to Review</div>
+    <div class="brief-body" id="mb-emails-body"><p style="color:var(--gray);font-size:.85rem">No data yet.</p></div>
+  </div>
+  <div class="brief-section">
+    <div class="brief-header">✅ Needs Attention</div>
+    <div class="brief-body" id="mb-actions-body"><p style="color:var(--gray);font-size:.85rem">No data yet.</p></div>
+  </div>
+</div>
+<div class="panel" id="panel-business">
+  <div class="stats">
+    <div class="stat"><strong id="biz-total">—</strong>Total</div>
+    <div class="stat"><strong id="biz-new">—</strong>New Today</div>
+    <div class="stat"><strong id="biz-avg-cf">—</strong>Avg Cash Flow</div>
+    <div class="stat"><strong id="biz-updated">—</strong>Last Updated</div>
+  </div>
+  <div class="controls">
+    <input type="text" id="biz-search" placeholder="🔍 Search name, region, type...">
+    <select id="biz-region">
+      <option value="">All Regions</option>
+      <option value="Hawaii">Hawaii</option>
+      <option value="Alabama">Alabama Gulf Coast</option>
+      <option value="Florida">Florida</option>
+      <option value="Texas">Texas Coast</option>
+      <option value="South Carolina">Myrtle Beach SC</option>
+      <option value="Missouri">St. Louis MO</option>
+      <option value="California">California</option>
+    </select>
+    <button class="fbtn active" data-f="all" onclick="bizFilter(this)">All</button>
+    <button class="fbtn" data-f="new" onclick="bizFilter(this)">🆕 New Only</button>
+    <select id="biz-sort" onchange="renderBiz()">
+      <option value="date">Newest First</option>
+      <option value="cf-desc">Cash Flow ↓</option>
+      <option value="price">Price ↑</option>
+    </select>
+  </div>
+  <div class="rbar" id="biz-rbar"></div>
+  <div class="cards" id="biz-cards"><div class="empty"><div class="icon">💼</div><p>No listings yet.</p></div></div>
+</div>
+<div class="panel" id="panel-flights">
+  <div class="stats">
+    <div class="stat"><strong id="fl-status">—</strong>Status</div>
+    <div class="stat"><strong id="fl-best">—</strong>Best Deal</div>
+    <div class="stat"><strong id="fl-dates">—</strong>Qualifying Dates</div>
+    <div class="stat"><strong id="fl-updated">—</strong>Last Checked</div>
+  </div>
+  <div id="fl-content"><div class="no-deal"><div class="icon">✈️</div><p>No data yet.</p></div></div>
+</div>
+<div class="panel" id="panel-catamaran">
+  <div class="stats">
+    <div class="stat"><strong id="cat-total">—</strong>Total</div>
+    <div class="stat"><strong id="cat-new">—</strong>New Today</div>
+    <div class="stat"><strong id="cat-priority">—</strong>⭐ Priority</div>
+    <div class="stat"><strong id="cat-low">—</strong>Lowest Ask</div>
+    <div class="stat"><strong id="cat-updated">—</strong>Last Updated</div>
+  </div>
+  <div class="controls">
+    <input type="text" id="cat-search" placeholder="🔍 Search model, location...">
+    <select id="cat-model">
+      <option value="">All Models</option>
+      <option value="PDQ 32">PDQ 32</option>
+      <option value="Prout Snowgoose">Prout Snowgoose 37</option>
+      <option value="Gemini 105M">Gemini 105M</option>
+      <option value="Endeavour">Endeavour Cat</option>
+      <option value="Catalac">Catalac</option>
+      <option value="PDQ 36">PDQ 36</option>
+    </select>
+    <select id="cat-source">
+      <option value="">All Sources</option>
+      <option value="SailboatListings">SailboatListings</option>
+      <option value="Boats.com">Boats.com</option>
+      <option value="BoatTrader">BoatTrader</option>
+      <option value="YachtWorld">YachtWorld</option>
+    </select>
+    <button class="fbtn active" data-f="all" onclick="catFilter(this)">All</button>
+    <button class="fbtn" data-f="new" onclick="catFilter(this)">🆕 New Only</button>
+    <button class="fbtn" data-f="priority" onclick="catFilter(this)">⭐ Priority</button>
+    <select id="cat-sort" onchange="renderCat()">
+      <option value="date">Newest Found</option>
+      <option value="price">Price ↑</option>
+      <option value="price-desc">Price ↓</option>
+      <option value="year-desc">Year ↓</option>
+    </select>
+  </div>
+  <div class="rbar" id="cat-rbar"></div>
+  <div class="cards" id="cat-cards"><div class="empty"><div class="icon">⛵</div><p>No listings yet.</p></div></div>
+</div>
+<footer>Tim's Dashboard · Updated by daily scheduled tasks · <span id="footer-ts"></span></footer>
+<script>
+function switchTab(name){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+const fmt$=n=>n?'$'+Number(n).toLocaleString():'—';
+const fmtD=s=>s?new Date(s).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'—';
+const BASE='data/';
+async function load(f){try{const r=await fetch(BASE+f+'?'+Date.now());return await r.json();}catch(e){return null;}}
+
+const PRIORITY=['PDQ 32','PDQ 36','Prout Snowgoose','Gemini 105M','Gemini 105Mc','Endeavour Cat','Catalac'];
+let catF='all',CAT=[];
+function catFilter(btn){document.querySelectorAll('#panel-catamaran .fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');catF=btn.dataset.f;renderCat();}
+function renderCat(){
+  const q=(document.getElementById('cat-search').value||'').toLowerCase();
+  const mf=document.getElementById('cat-model').value;
+  const sf=document.getElementById('cat-source').value;
+  const so=document.getElementById('cat-sort').value;
+  let list=CAT.filter(l=>{
+    if(catF==='new'&&!l.isNew)return false;
+    if(catF==='priority'&&!l.priority)return false;
+    if(mf&&!(l.model||'').includes(mf))return false;
+    if(sf&&l.source!==sf)return false;
+    if(q){const h=[l.title,l.model,l.location,l.notes,l.source].join(' ').toLowerCase();if(!h.includes(q))return false;}
+    return true;
+  });
+  list.sort((a,b)=>so==='price'?(a.price||999999)-(b.price||999999):so==='price-desc'?(b.price||0)-(a.price||0):so==='year-desc'?(b.year||0)-(a.year||0):(b.dateFound||'').localeCompare(a.dateFound||''));
+  const nC=CAT.filter(l=>l.isNew).length,pC=CAT.filter(l=>l.priority).length;
+  const pr=CAT.map(l=>l.price).filter(Boolean);
+  document.getElementById('cat-total').textContent=CAT.length;
+  document.getElementById('cat-new').textContent=nC;
+  document.getElementById('cat-priority').textContent=pC;
+  document.getElementById('cat-low').textContent=pr.length?fmt$(Math.min(...pr)):'—';
+  document.getElementById('dot-catamaran').className='dot'+(nC>0?' has-new':'');
+  document.getElementById('cat-rbar').textContent=`Showing ${list.length} of ${CAT.length} listings`;
+  const el=document.getElementById('cat-cards');
+  if(!list.length){el.innerHTML='<div class="empty"><div class="icon">🔍</div><p>No listings match filters.</p></div>';return;}
+  el.innerHTML=list.map(l=>`<div class="card ${(l.isNew?'is-new ':'')}${l.priority?'priority':''}">
+<div class="ch"><div class="ct">${l.priority?'⭐ ':''}${l.model||l.title||'Unknown'}${l.year?' · '+l.year:''}</div><div class="cp">${fmt$(l.price)}</div></div>
+<div class="cbadges">${l.isNew?'<span class="tag new">🆕 New</span>':''}${l.priority?'<span class="tag pri">⭐ Priority</span>':''}<span class="tag src">${l.source||'?'}</span></div>
+<div class="cb"><div class="loc">📍 ${l.location||'Unknown'}</div>${l.notes?`<div class="notes">${l.notes}</div>`:''}</div>
+<div class="cf"><span class="date">Found ${l.dateFound||'—'}</span>${l.url?`<a href="${l.url}" target="_blank">View →</a>`:''}</div>
+</div>`).join('');
+}
+async function loadCat(){const d=await load('catamaran.json');if(!d)return;CAT=d.listings||[];document.getElementById('cat-updated').textContent=fmtD(d.lastUpdated);renderCat();}
+</script>
+<script>
+let bizF='all',BIZ=[];
+function bizFilter(btn){document.querySelectorAll('#panel-business .fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');bizF=btn.dataset.f;renderBiz();}
+function renderBiz(){
+  const q=(document.getElementById('biz-search').value||'').toLowerCase();
+  const rf=document.getElementById('biz-region').value;
+  const so=document.getElementById('biz-sort').value;
+  let list=BIZ.filter(l=>{
+    if(bizF==='new'&&!l.isNew)return false;
+    if(rf&&!(l.region||l.location||'').includes(rf))return false;
+    if(q){const h=[l.name,l.type,l.location,l.region,l.notes].join(' ').toLowerCase();if(!h.includes(q))return false;}
+    return true;
+  });
+  list.sort((a,b)=>so==='cf-desc'?(b.cashFlow||0)-(a.cashFlow||0):so==='price'?(a.price||999999999)-(b.price||999999999):(b.dateFound||'').localeCompare(a.dateFound||''));
+  const nC=BIZ.filter(l=>l.isNew).length;
+  const cfs=BIZ.map(l=>l.cashFlow).filter(Boolean);
+  const avg=cfs.length?Math.round(cfs.reduce((a,b)=>a+b,0)/cfs.length):0;
+  document.getElementById('biz-total').textContent=BIZ.length;
+  document.getElementById('biz-new').textContent=nC;
+  document.getElementById('biz-avg-cf').textContent=avg?fmt$(avg):'—';
+  document.getElementById('dot-business').className='dot'+(nC>0?' has-new':'');
+  document.getElementById('biz-rbar').textContent=`Showing ${list.length} of ${BIZ.length} listings`;
+  const el=document.getElementById('biz-cards');
+  if(!list.length){el.innerHTML='<div class="empty"><div class="icon">💼</div><p>No listings match filters.</p></div>';return;}
+  el.innerHTML=list.map(l=>`<div class="card ${l.isNew?'is-new':''}">
+<div class="ch"><div class="ct">${l.name||'Unknown Business'}</div><div class="cp">${fmt$(l.price)}</div></div>
+<div class="cbadges">${l.isNew?'<span class="tag new">🆕 New</span>':''}<span class="tag reg">${l.region||l.location||'?'}</span>${l.type?`<span class="tag src">${l.type}</span>`:''}</div>
+<div class="cb"><div class="loc">📍 ${l.location||'Unknown'}</div>${l.cashFlow?`<div style="color:var(--green);font-weight:600;margin-top:2px">Cash Flow: ${fmt$(l.cashFlow)}/yr</div>`:''} ${l.notes?`<div class="notes">${l.notes}</div>`:''}</div>
+<div class="cf"><span class="date">Found ${l.dateFound||'—'}</span>${l.url?`<a href="${l.url}" target="_blank">View →</a>`:''}</div>
+</div>`).join('');
+}
+async function loadBiz(){const d=await load('business.json');if(!d)return;BIZ=d.listings||[];document.getElementById('biz-updated').textContent=fmtD(d.lastUpdated);renderBiz();}
+
+async function loadFlights(){
+  const d=await load('flights.json');if(!d)return;
+  const deals=d.deals||[];
+  const best=deals.length?Math.min(...deals.map(x=>x.totalCost||999)):null;
+  document.getElementById('fl-status').textContent=d.foundDeal?'✅ Deal Found':'No Deal';
+  document.getElementById('fl-best').textContent=best&&best<900?fmt$(best):'—';
+  document.getElementById('fl-dates').textContent=deals.length||0;
+  document.getElementById('fl-updated').textContent=fmtD(d.lastChecked);
+  document.getElementById('dot-flights').className='dot'+(d.foundDeal?' has-new':'');
+  const el=document.getElementById('fl-content');
+  if(!deals.length){el.innerHTML='<div class="no-deal"><div class="icon">✈️</div><p style="font-weight:600">No qualifying deals right now.</p><p style="font-size:.82rem;margin-top:8px">Criteria: STL→DEN nonstop morning + Frontier return ≤ $200 total · Weekdays · 90-day window</p></div>';return;}
+  el.innerHTML=deals.map(deal=>`<div class="flight-card deal">
+<div class="fc-header"><div class="fc-title">✈️ ${deal.date||'?'} · ${deal.weekday||''}</div><div class="fc-price">${fmt$(deal.totalCost)}</div></div>
+<div class="flight-leg"><span class="airline">${deal.outboundAirline||'?'}</span><span class="route">STL → DEN &nbsp; ${deal.outboundDepart||''} – ${deal.outboundArrive||''} &nbsp; Nonstop</span><span style="margin-left:auto;font-weight:600">${fmt$(deal.outboundPrice)}</span></div>
+<div class="flight-leg"><span class="airline">Frontier</span><span class="route">DEN → STL &nbsp; ${deal.returnDepart||''} – ${deal.returnArrive||''} &nbsp; Nonstop</span><span style="margin-left:auto;font-weight:600">$15 (award)</span></div>
+${deal.bookingUrl?`<div style="margin-top:10px"><a href="${deal.bookingUrl}" target="_blank" style="background:var(--green);color:#fff;padding:7px 14px;border-radius:6px;text-decoration:none;font-size:.85rem;font-weight:600">Book Outbound →</a></div>`:''}
+${deal.notes?`<div style="font-size:.78rem;color:var(--gray);margin-top:8px;font-style:italic">${deal.notes}</div>`:''}
+</div>`).join('');
+}
+</script>
+<script>
+async function loadMorning(){
+  const d=await load('morning.json');if(!d)return;
+  const sched=d.schedule||[],emails=d.emails||[],actions=d.actions||[];
+  document.getElementById('mb-events').textContent=sched.length;
+  document.getElementById('mb-emails').textContent=emails.length;
+  document.getElementById('mb-actions').textContent=actions.length;
+  document.getElementById('mb-updated').textContent=fmtD(d.lastUpdated);
+  document.getElementById('dot-morning').className='dot'+(actions.length>0?' has-new':'');
+  document.getElementById('mb-schedule-body').innerHTML=sched.length?sched.map(e=>`<div class="brief-item"><span class="time">${e.time||''}</span><div><div class="label">${e.title||''}</div>${e.detail?`<div class="sub">${e.detail}</div>`:''}</div></div>`).join(''):'<p style="color:var(--gray);font-size:.85rem">No events today.</p>';
+  document.getElementById('mb-emails-body').innerHTML=emails.length?emails.map(e=>`<div class="brief-item"><span class="time">${e.sender||''}</span><div><div class="label">${e.subject||''}</div>${e.summary?`<div class="sub">${e.summary}</div>`:''}</div></div>`).join(''):'<p style="color:var(--gray);font-size:.85rem">No flagged emails.</p>';
+  document.getElementById('mb-actions-body').innerHTML=actions.length?actions.map(a=>`<div class="action-item"><div class="bullet"></div><div>${a}</div></div>`).join(''):'<p style="color:var(--gray);font-size:.85rem">No action items.</p>';
+}
+
+async function init(){
+  const now=new Date();
+  document.getElementById('page-ts').textContent='Loaded '+now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  document.getElementById('footer-ts').textContent=now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  await Promise.all([loadMorning(),loadBiz(),loadFlights(),loadCat()]);
+}
+['cat-search','cat-model','cat-source'].forEach(id=>document.getElementById(id)?.addEventListener('input',renderCat));
+['biz-search','biz-region'].forEach(id=>document.getElementById(id)?.addEventListener('input',renderBiz));
+document.getElementById('cat-sort')?.addEventListener('change',renderCat);
+document.getElementById('biz-sort')?.addEventListener('change',renderBiz);
+init();
+</script>
+</body>
+</html>
