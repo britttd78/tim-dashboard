@@ -1,1 +1,70 @@
-{"lastUpdated":null,"listings":[]}
+{
+  "lastUpdated": "2026-06-12T11:00:00-05:00",
+  "listings": [
+    {
+      "model": "Gemini 105Mc",
+      "title": "Gemini 105Mc \"LE REVE\"",
+      "year": 2006,
+      "price": null,
+      "location": "Moore Haven, FL",
+      "source": "Saved lead",
+      "priority": true,
+      "isNew": false,
+      "dateFound": "2026-06-11",
+      "url": null,
+      "notes": "Top target. 500W solar, new windlass, shallow-draft ready. Price TBD — call immediately."
+    },
+    {
+      "model": "Gemini 105Mc",
+      "title": "2005 Gemini 105Mc",
+      "year": 2005,
+      "price": 77000,
+      "location": "Westport Point, MA",
+      "source": "Saved lead",
+      "priority": true,
+      "isNew": false,
+      "dateFound": "2026-06-11",
+      "url": null,
+      "notes": "Implied ask ~$76–79K — in budget."
+    },
+    {
+      "model": "Gemini 105M",
+      "title": "Gemini 105M/C",
+      "year": null,
+      "price": 61000,
+      "location": "Ridge, MD",
+      "source": "Saved lead",
+      "priority": true,
+      "isNew": false,
+      "dateFound": "2026-06-11",
+      "url": null,
+      "notes": "Older M model. Chesapeake location ideal for a delivery route."
+    },
+    {
+      "model": "Gemini 105M",
+      "title": "Gemini 105M",
+      "year": null,
+      "price": 55000,
+      "location": "Crystal River, FL",
+      "source": "Saved lead",
+      "priority": true,
+      "isNew": false,
+      "dateFound": "2026-06-11",
+      "url": null,
+      "notes": "Leaves ~$25K refit budget."
+    },
+    {
+      "model": "PDQ 32",
+      "title": "PDQ 32 LRC",
+      "year": null,
+      "price": 59500,
+      "location": "Deltaville, VA",
+      "source": "Saved lead",
+      "priority": true,
+      "isNew": false,
+      "dateFound": "2026-06-11",
+      "url": null,
+      "notes": "Well under budget; twin outboards, beginner-friendly."
+    }
+  ]
+}
