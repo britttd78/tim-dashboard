@@ -1,1 +1,29 @@
-{"lastUpdated":null,"listings":[]}
+{
+  "lastUpdated": "2026-06-12T07:00:00-05:00",
+  "listings": [
+    {
+      "name": "High Income Alabama Gas Station",
+      "type": "Gas Station / C-Store",
+      "region": "Alabama",
+      "location": "Orange Beach, AL",
+      "price": 300000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-12",
+      "url": "https://www.bizquest.com/business-for-sale/high-income-alabama-gas-station/BW2517115/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "2 Self-Service 5-Bay Car Washes in St. Louis & St. Charles MO",
+      "type": "Car Wash",
+      "region": "Missouri",
+      "location": "Saint Charles, MO",
+      "price": 450000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-12",
+      "url": "https://www.bizquest.com/business-for-sale/2-self-service-5-bay-car-washes-in-st-louis-and-st-charles-mo/BW2516707/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    }
+  ]
+}
