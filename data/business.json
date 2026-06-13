@@ -1,6 +1,18 @@
 {
-  "lastUpdated": "2026-06-12T15:35:41-05:00",
+  "lastUpdated": "2026-06-13T05:38:02-05:00",
   "listings": [
+    {
+      "name": "Thriving Pack/Ship/Ebay store Business for Sale!",
+      "type": "Pack & Ship / eBay Store",
+      "region": "Missouri",
+      "location": "St. Charles County, MO",
+      "price": 125000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-13",
+      "url": "https://www.bizquest.com/business-for-sale/thriving-pack-ship-ebay-store-business-for-sale/BW2517135/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
     {
       "name": "Profitable Home Care and Living Assistance Business",
       "type": "Home Care / Senior Care",
@@ -8,7 +20,7 @@
       "location": "Saint Louis, MO",
       "price": 229000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-12",
       "url": "https://www.bizquest.com/business-for-sale/profitable-home-care-and-living-assistance-business/BW2515438/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
