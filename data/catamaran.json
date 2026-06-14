@@ -1,18 +1,18 @@
 {
-  "lastUpdated": "2026-06-14T16:08:51+00:00",
+  "lastUpdated": "2026-06-14T18:56:24+00:00",
   "listings": [
     {
       "model": "Gemini 105Mc",
       "title": "Gemini 105Mc \"LE REVE\"",
       "year": 2006,
-      "price": null,
+      "price": 85000,
       "location": "Moore Haven, FL",
       "source": "Saved lead",
       "priority": true,
       "isNew": false,
       "dateFound": "2026-06-11",
-      "url": null,
-      "notes": "Top target. 500W solar, new windlass, shallow-draft ready. Price TBD — call immediately."
+      "url": "https://www.catamaransite.com/catamarans-for-sale/gemini-105mc-14/",
+      "notes": "Top target. 500W solar, new windlass, shallow-draft ready. Asking $85K — slightly over $80K budget but within headroom."
     },
     {
       "model": "Gemini 105Mc",
@@ -25,7 +25,7 @@
       "isNew": false,
       "dateFound": "2026-06-11",
       "url": null,
-      "notes": "Implied ask ~$76–79K — in budget."
+      "notes": "Implied ask ~$76–79K — in budget. Original listing not currently locatable online (likely sold or de-listed)."
     },
     {
       "model": "Gemini 105M",
@@ -38,33 +38,33 @@
       "isNew": false,
       "dateFound": "2026-06-11",
       "url": null,
-      "notes": "Older M model. Chesapeake location ideal for a delivery route."
+      "notes": "Older M model. Chesapeake location ideal for a delivery route. Original listing not currently locatable online (likely sold or de-listed)."
     },
     {
       "model": "Gemini 105M",
       "title": "Gemini 105M",
-      "year": null,
+      "year": 1998,
       "price": 55000,
       "location": "Crystal River, FL",
       "source": "Saved lead",
       "priority": true,
       "isNew": false,
       "dateFound": "2026-06-11",
-      "url": null,
-      "notes": "Leaves ~$25K refit budget."
+      "url": "https://www.sailboatlistings.com/view/111682",
+      "notes": "Leaves ~$25K refit budget. 1998, diesel inboard, shallow draft."
     },
     {
       "model": "PDQ 32",
       "title": "PDQ 32 LRC",
-      "year": null,
+      "year": 1995,
       "price": 59500,
       "location": "Deltaville, VA",
       "source": "Saved lead",
       "priority": true,
       "isNew": false,
       "dateFound": "2026-06-11",
-      "url": null,
-      "notes": "Well under budget; twin outboards, beginner-friendly."
+      "url": "https://www.sailboatlistings.com/view/111670",
+      "notes": "Well under budget; twin diesel inboards, beginner-friendly."
     }
   ]
 }
