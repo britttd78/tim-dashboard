@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T05:38:43-05:00",
+  "lastUpdated": "2026-06-15T10:40:34.089Z",
   "listings": [
     {
       "name": "Thriving Pack/Ship/Ebay store Business for Sale!",
@@ -47,6 +47,102 @@
       "isNew": false,
       "dateFound": "2026-06-12",
       "url": "https://www.bizquest.com/business-for-sale/2-self-service-5-bay-car-washes-in-st-louis-and-st-charles-mo/BW2516707/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Profitable Franchise Sandwich Shop Fort Myers, $312K Owner Benefit",
+      "type": "Sandwich Shop (Franchise resale)",
+      "region": "Florida",
+      "location": "Fort Myers, FL",
+      "price": 799000,
+      "cashFlow": 312000,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/profitable-franchise-sandwich-shop-fort-myers-312k-owner-benefit/BW2516582/",
+      "notes": "Existing franchise location resale; SDE = $312K owner benefit stated in alert."
+    },
+    {
+      "name": "Thriving Street Sweeping Business for Sale",
+      "type": "Street Sweeping",
+      "region": "Florida",
+      "location": "Fort Myers, FL",
+      "price": 1750000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/thriving-street-sweeping-business-for-sale/BW2517578/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Modern American Cuisine Restaurant for Sale in Historic Downtown",
+      "type": "Restaurant",
+      "region": "Florida",
+      "location": "Jacksonville, FL",
+      "price": 250000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/modern-american-cuisine-restaurant-for-sale-in-historic-downtown/BW2516438/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Invest in one of Southwest Florida's top Escape Rooms!",
+      "type": "Escape Room",
+      "region": "Florida",
+      "location": "Fort Myers, FL",
+      "price": 165000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/invest-in-one-of-southwest-floridas-top-escape-rooms/BW2512842/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Allstate Agency in the Corpus Christi Area",
+      "type": "Insurance Agency",
+      "region": "Texas",
+      "location": "Corpus Christi, TX",
+      "price": 540000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/allstate-agency-in-the-corpus-christi-area/BW2517682/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Premier Custom Pool Construction and Concrete Remodeling Company",
+      "type": "Pool Construction",
+      "region": "Texas",
+      "location": "Cameron County, TX",
+      "price": 500000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/premier-custom-pool-construction-and-concrete-remodeling-company/BW2516012/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Scalable Residential Support and Care Services Business",
+      "type": "Residential Care Services",
+      "region": "Texas",
+      "location": "Corpus Christi, TX",
+      "price": 189500,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/scalable-residential-support-and-care-services-business/BW2515384/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Residential Cleaning Business For Sale – St. Louis, MO",
+      "type": "Residential Cleaning",
+      "region": "Missouri",
+      "location": "St. Louis County, MO",
+      "price": 58000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-15",
+      "url": "https://www.bizquest.com/business-for-sale/residential-cleaning-business-for-sale-st-louis-mo/BW2512315/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
     }
   ]

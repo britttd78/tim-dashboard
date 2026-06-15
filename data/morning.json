@@ -1,1 +1,17 @@
-{"lastUpdated":null,"schedule":[],"emails":[],"actions":[]}
+{
+  "lastUpdated": "2026-06-15T09:10:55Z",
+  "schedule": [
+    { "time": "4:45 PM", "title": "Trash to curb", "detail": "Recurring reminder (only calendar item today)" }
+  ],
+  "emails": [
+    { "sender": "Simone Zito (First Choice Business Brokers)", "subject": "Simone Zito here from First Choice Business Brokers", "summary": "Personal follow-up on a business listing you're interested in; ready to share financials/name/location, likely needs a reply or NDA to proceed." },
+    { "sender": "Andrew Delehaunty (FZS)", "subject": "Fwd: FZS Golf Banquet", "summary": "Needs a headcount for the FZS golf banquet this week; fill out the RSVP link if you haven't yet." },
+    { "sender": "GoFundMe", "subject": "Action Required: Payouts Paused / Set up withdrawals", "summary": "Two 'action required' payout emails. Verify on gofundme.com directly before acting; matches a phishing pattern, don't enter info via email links." }
+  ],
+  "actions": [
+    "Reply to Simone Zito (First Choice Business Brokers) about the business listing you're interested in.",
+    "RSVP your headcount for the FZS Golf Banquet (Andrew Delehaunty) via the link.",
+    "Verify the GoFundMe payout/verification emails directly on gofundme.com before acting; likely phishing, don't click email links.",
+    "Take trash to curb at 4:45 PM."
+  ]
+}
