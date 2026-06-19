@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T10:40:34.089Z",
+  "lastUpdated": "2026-06-19T14:11:26.065Z",
   "listings": [
     {
       "name": "Thriving Pack/Ship/Ebay store Business for Sale!",
@@ -56,7 +56,7 @@
       "location": "Fort Myers, FL",
       "price": 799000,
       "cashFlow": 312000,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/profitable-franchise-sandwich-shop-fort-myers-312k-owner-benefit/BW2516582/",
       "notes": "Existing franchise location resale; SDE = $312K owner benefit stated in alert."
@@ -68,7 +68,7 @@
       "location": "Fort Myers, FL",
       "price": 1750000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/thriving-street-sweeping-business-for-sale/BW2517578/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -80,7 +80,7 @@
       "location": "Jacksonville, FL",
       "price": 250000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/modern-american-cuisine-restaurant-for-sale-in-historic-downtown/BW2516438/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -92,7 +92,7 @@
       "location": "Fort Myers, FL",
       "price": 165000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/invest-in-one-of-southwest-floridas-top-escape-rooms/BW2512842/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -104,7 +104,7 @@
       "location": "Corpus Christi, TX",
       "price": 540000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/allstate-agency-in-the-corpus-christi-area/BW2517682/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -116,7 +116,7 @@
       "location": "Cameron County, TX",
       "price": 500000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/premier-custom-pool-construction-and-concrete-remodeling-company/BW2516012/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -128,7 +128,7 @@
       "location": "Corpus Christi, TX",
       "price": 189500,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/scalable-residential-support-and-care-services-business/BW2515384/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -140,10 +140,58 @@
       "location": "St. Louis County, MO",
       "price": 58000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-15",
       "url": "https://www.bizquest.com/business-for-sale/residential-cleaning-business-for-sale-st-louis-mo/BW2512315/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "High-Volume Urgent Care Practice with Expansion Potential",
+      "type": "Urgent Care Practice",
+      "region": "Missouri",
+      "location": "St. Louis County, MO",
+      "price": 1750000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-19",
+      "url": "https://www.bizquest.com/business-for-sale/high-volume-urgent-care-practice-with-expansion-potential/BW2519912/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Family-Owned, Multi-Generational Pizzeria #1099",
+      "type": "Restaurant / Pizzeria",
+      "region": "Missouri",
+      "location": "Saint Louis, MO",
+      "price": 1900000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-19",
+      "url": "https://www.bizquest.com/business-for-sale/family-owned-multi-generational-pizzeria-1099/BW2518637/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Well-Established Auto Body Shop And Real Estate",
+      "type": "Auto Body Shop",
+      "region": "Missouri",
+      "location": "Saint Louis, MO",
+      "price": 225000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-19",
+      "url": "https://www.bizquest.com/business-for-sale/well-established-auto-body-shop-and-real-estate/BW2519700/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Growing Restoration Company With High Performing Referral Network",
+      "type": "Restoration Company",
+      "region": "Alabama",
+      "location": "Elberta, AL",
+      "price": 1199900,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-19",
+      "url": "https://www.bizquest.com/business-for-sale/growing-restoration-company-with-high-performing-referral-network/BW2520010/",
+      "notes": "Baldwin County, AL. SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
     }
   ]
 }
