@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-19T14:11:26.065Z",
+  "lastUpdated": "2026-06-26T14:13:53.019Z",
   "listings": [
     {
       "name": "Thriving Pack/Ship/Ebay store Business for Sale!",
@@ -152,7 +152,7 @@
       "location": "St. Louis County, MO",
       "price": 1750000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-19",
       "url": "https://www.bizquest.com/business-for-sale/high-volume-urgent-care-practice-with-expansion-potential/BW2519912/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -164,7 +164,7 @@
       "location": "Saint Louis, MO",
       "price": 1900000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-19",
       "url": "https://www.bizquest.com/business-for-sale/family-owned-multi-generational-pizzeria-1099/BW2518637/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -176,7 +176,7 @@
       "location": "Saint Louis, MO",
       "price": 225000,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-19",
       "url": "https://www.bizquest.com/business-for-sale/well-established-auto-body-shop-and-real-estate/BW2519700/",
       "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
@@ -188,10 +188,34 @@
       "location": "Elberta, AL",
       "price": 1199900,
       "cashFlow": null,
-      "isNew": true,
+      "isNew": false,
       "dateFound": "2026-06-19",
       "url": "https://www.bizquest.com/business-for-sale/growing-restoration-company-with-high-performing-referral-network/BW2520010/",
       "notes": "Baldwin County, AL. SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "South St Louis County CPA Firm",
+      "type": "CPA / Accounting Firm",
+      "region": "Missouri",
+      "location": "Saint Louis, MO",
+      "price": 1400000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-26",
+      "url": "https://www.bizquest.com/business-for-sale/south-st-louis-county-cpa-firm/BW2522325/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
+    },
+    {
+      "name": "Home Improvement Siding Business for Sale in St Louise, MO",
+      "type": "Home Improvement / Siding Contractor",
+      "region": "Missouri",
+      "location": "St. Louis, MO",
+      "price": 130000,
+      "cashFlow": null,
+      "isNew": true,
+      "dateFound": "2026-06-26",
+      "url": "https://www.bizquest.com/business-for-sale/home-improvement-siding-business-for-sale-in-st-louise-mo/BW2521483/",
+      "notes": "SDE/cash flow not stated in the BizQuest alert email — verify on listing page."
     }
   ]
 }
